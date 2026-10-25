@@ -10,14 +10,20 @@ import { siteConfig } from '@/data/site'
 
 // Form libraries (react-hook-form, zod) load in a separate chunk
 const ContactForm = dynamic(() => import('./ContactForm'), {
-  loading: () => <div className="min-h-[26rem] animate-pulse rounded-brand bg-surface" aria-hidden />,
+  loading: () => (
+    <div className="min-h-[26rem] animate-pulse rounded-brand bg-surface" aria-hidden />
+  ),
 })
 
 export default function Contact({ as = 'h2' }: { as?: 'h1' | 'h2' }) {
   const whatsappHref = `https://wa.me/${siteConfig.whatsapp.number}?text=${encodeURIComponent(siteConfig.whatsapp.message)}`
 
   return (
-    <section id="contact" aria-label="Contact" className="scroll-mt-16 border-t border-line py-24 md:py-40">
+    <section
+      id="contact"
+      aria-label="Contact"
+      className="scroll-mt-16 border-t border-line py-24 md:py-40"
+    >
       <Container>
         <div className="mb-8 flex items-center gap-4">
           <Label>08 / Contact</Label>
@@ -34,7 +40,8 @@ export default function Contact({ as = 'h2' }: { as?: 'h1' | 'h2' }) {
           <div className="space-y-10 lg:col-span-5">
             <Reveal>
               <p className="max-w-sm font-body text-lg leading-relaxed text-muted">
-                Tell me what you&rsquo;re building, who it&rsquo;s for and when you need it. I reply to every message within two working days.
+                Tell me what you&rsquo;re building, who it&rsquo;s for and when you need it. I reply
+                to every message within two working days.
               </p>
             </Reveal>
 

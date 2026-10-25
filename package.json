@@ -1,8 +1,10 @@
 {
-  "name": "khan-zadi-portfolio",
+  "name": "ava-williams-portfolio",
   "version": "1.0.0",
   "private": true,
-  "engines": { "node": ">=20.9.0" },
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

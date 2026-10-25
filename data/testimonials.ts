@@ -4,7 +4,7 @@ import type { Testimonial } from '@/types'
 export const testimonials: Testimonial[] = [
   {
     quote:
-      'Khan took a vague idea and handed back an identity we were proud to put on the door. Our customers comment on the packaging every week.',
+      'Ava took a vague idea and handed back an identity we were proud to put on the door. Our customers comment on the packaging every week.',
     name: 'Ayesha Malik',
     role: 'Founder',
     company: 'Orbit Coffee Roasters',
@@ -25,7 +25,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      'Our magazine finally feels like one voice from cover to back page. Khan understood the content before she touched the layout.',
+      'Our magazine finally feels like one voice from cover to back page. Ava understood the content before she touched the layout.',
     name: 'Omar Farooq',
     role: 'Editor',
     company: 'The Quiet Issue',

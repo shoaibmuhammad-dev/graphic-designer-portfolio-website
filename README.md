@@ -1,4 +1,4 @@
-# Khan Zadi — Portfolio
+# Ava Williams — Portfolio
 
 Minimal, editorial portfolio for a graphic designer. Next.js 15 (App Router), TypeScript (strict), Tailwind CSS 3, Motion (Framer Motion), Lenis, React Hook Form + Zod, Resend.
 
@@ -29,14 +29,14 @@ npm run start          # serve the production build on http://localhost:3000
 
 ## 3. Environment variables (`.env.local`)
 
-| Variable | Required | What it does |
-| --- | --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | Yes (production) | Full public URL, no trailing slash, e.g. `https://khanzadi.design`. Used for canonical URLs, sitemap, Open Graph and JSON-LD. |
-| `RESEND_API_KEY` | Yes (production) | API key from Resend. Without it the form logs to the console in dev and returns a 503 in production. |
-| `CONTACT_TO_EMAIL` | Yes | Inbox that receives enquiries. |
-| `CONTACT_FROM_EMAIL` | Yes | Sender, e.g. `Khan Zadi <hello@khanzadi.design>`. Must be on a domain verified in Resend. For testing use `Portfolio <onboarding@resend.dev>`. |
-| `NEXT_PUBLIC_GSC_VERIFICATION` | Optional | Google Search Console verification token (the `content` value of the meta tag). |
-| `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` | Optional | Enables Plausible analytics, e.g. `khanzadi.design`. Leave empty to disable. |
+| Variable                       | Required         | What it does                                                                                                                                          |
+| ------------------------------ | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL`         | Yes (production) | Full public URL, no trailing slash, e.g. `https://ava-williams.design`. Used for canonical URLs, sitemap, Open Graph and JSON-LD.                     |
+| `RESEND_API_KEY`               | Yes (production) | API key from Resend. Without it the form logs to the console in dev and returns a 503 in production.                                                  |
+| `CONTACT_TO_EMAIL`             | Yes              | Inbox that receives enquiries.                                                                                                                        |
+| `CONTACT_FROM_EMAIL`           | Yes              | Sender, e.g. `Ava Williams <hello@ava-williams.design>`. Must be on a domain verified in Resend. For testing use `Portfolio <onboarding@resend.dev>`. |
+| `NEXT_PUBLIC_GSC_VERIFICATION` | Optional         | Google Search Console verification token (the `content` value of the meta tag).                                                                       |
+| `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` | Optional         | Enables Plausible analytics, e.g. `avawilliams.design`. Leave empty to disable.                                                                       |
 
 Never commit `.env.local` (it is already in `.gitignore`).
 
@@ -84,15 +84,15 @@ To use a CMS later (Sanity, Contentlayer), keep the `Project` type in `types/ind
 - **Portrait**: add `public/images/portrait.jpg` (4:5 ratio), then in `data/site.ts` set `portrait: { src: '/images/portrait.jpg', alt: '...', aspect: 'portrait', art: ... }`.
 - **Logo / monogram**: the navbar logo is the `monogram` text in `data/site.ts` (default "KZ"). To use an image logo, replace the monogram `<span>` in `components/layout/Navbar.tsx` with a `next/image`. Replace the favicon by editing `app/icon.tsx` and `app/apple-icon.tsx` (or delete them and drop `icon.png`/`apple-icon.png` into `app/`).
 - **PWA icons**: `app/manifest.ts` points to the generated 32px and 180px icons. For full installability, add 192px and 512px PNGs to `public/icons/` and list them in the manifest.
-- **CV**: replace `public/cv/khan-zadi-cv.pdf` with the real file (keep the filename), or change `cvPath` in `data/site.ts`.
+- **CV**: replace `public/cv/ava-williams-cv.pdf` with the real file (keep the filename), or change `cvPath` in `data/site.ts`.
 
 ## 8. Change the WhatsApp number and contact email
 
 Everything lives in `data/site.ts`:
 
 ```ts
-email: 'hello@khanzadi.design',
-whatsapp: { number: '923001234567', message: "Hi Khan, ..." },
+email: 'hello@ava-williams.design',
+whatsapp: { number: '923001234567', message: "Hi Ava, ..." },
 ```
 
 `number` must be international format, digits only (no `+`, spaces or dashes). The floating button, the contact section button and the prefilled message all read from here. Also edit `socials`, `city`, `country`, `bio`, `facts`, `tagline`, and the `availability` badge (`open: false` hides it).
@@ -103,7 +103,7 @@ Note: the form sends to `CONTACT_TO_EMAIL`, which is separate from the display e
 
 1. Create an account at https://resend.com and open **API Keys** > **Create API Key** (sending access). Copy it into `RESEND_API_KEY`.
 2. **Testing**: keep `CONTACT_FROM_EMAIL=Portfolio <onboarding@resend.dev>`. Resend only delivers test emails to the address that owns your Resend account, so set `CONTACT_TO_EMAIL` to that address.
-3. **Production**: in Resend open **Domains** > **Add Domain**, add `khanzadi.design`, and create the DNS records Resend shows (SPF, DKIM) at your domain provider. Once verified, set `CONTACT_FROM_EMAIL=Khan Zadi <hello@khanzadi.design>` and `CONTACT_TO_EMAIL` to the inbox that should receive enquiries.
+3. **Production**: in Resend open **Domains** > **Add Domain**, add `ava-williams.design`, and create the DNS records Resend shows (SPF, DKIM) at your domain provider. Once verified, set `CONTACT_FROM_EMAIL=Ava Williams <hello@ava-williams.design>` and `CONTACT_TO_EMAIL` to the inbox that should receive enquiries.
 4. Submit the form locally and check the inbox. Replies go straight to the visitor (the API sets `replyTo`).
 
 How the form is protected: Zod validation on client and server, a hidden honeypot field (bots that fill it get a fake success), and an in-memory rate limit of 5 submissions per IP per 10 minutes (`lib/rate-limit.ts`). The in-memory limiter is per server instance; if you expect abuse, swap it for Upstash Ratelimit.
@@ -112,9 +112,9 @@ How the form is protected: Zod validation on client and server, a hidden honeypo
 
 1. Push the project to GitHub, GitLab or Bitbucket.
 2. In Vercel choose **Add New > Project**, import the repo (framework auto-detected as Next.js).
-3. Under **Environment Variables** add every variable from section 3 (set `NEXT_PUBLIC_SITE_URL` to your final domain, e.g. `https://khanzadi.design`).
+3. Under **Environment Variables** add every variable from section 3 (set `NEXT_PUBLIC_SITE_URL` to your final domain, e.g. `https://ava-williams.design`).
 4. Click **Deploy**.
-5. **Custom domain**: Project > **Settings > Domains** > add `khanzadi.design` and `www.khanzadi.design`. Add the DNS records Vercel shows (an `A` record for the apex domain, a `CNAME` for `www`), or switch to Vercel nameservers. Pick one version as primary and let the other redirect.
+5. **Custom domain**: Project > **Settings > Domains** > add `ava-williams.design` and `www.ava-williams.design`. Add the DNS records Vercel shows (an `A` record for the apex domain, a `CNAME` for `www`), or switch to Vercel nameservers. Pick one version as primary and let the other redirect.
 6. After the domain is live, check that `NEXT_PUBLIC_SITE_URL` matches it exactly, then **redeploy** (public variables are baked in at build time).
 
 ## 11. Post-launch SEO checklist
@@ -139,31 +139,31 @@ How the form is protected: Zod validation on client and server, a hidden honeypo
 
 Common fixes:
 
-| Issue | Fix |
-| --- | --- |
-| Large images / slow LCP | Compress sources to under ~600 KB, use correct `sizes`, only the hero cover uses `priority`. |
-| CLS (layout shift) | Every image sits in a fixed aspect-ratio box; keep that when you add content. |
-| Contrast warnings | Keep text colours from `data/theme.ts`. For text on white use `text-ink`, `text-muted` or `text-accent-ink`, not `text-subtle` or the raw accent on light accents (lime, lilac). |
-| Unused JavaScript | The lightbox, cursor, slider and form are already code-split; avoid adding heavy libraries. |
-| Missing `alt` | Every image has `alt` in `data/*`; fill them in properly when you add real images. |
-| Console errors from fonts | Check the network is available at build time (fonts are downloaded during `next build`). |
+| Issue                     | Fix                                                                                                                                                                              |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Large images / slow LCP   | Compress sources to under ~600 KB, use correct `sizes`, only the hero cover uses `priority`.                                                                                     |
+| CLS (layout shift)        | Every image sits in a fixed aspect-ratio box; keep that when you add content.                                                                                                    |
+| Contrast warnings         | Keep text colours from `data/theme.ts`. For text on white use `text-ink`, `text-muted` or `text-accent-ink`, not `text-subtle` or the raw accent on light accents (lime, lilac). |
+| Unused JavaScript         | The lightbox, cursor, slider and form are already code-split; avoid adding heavy libraries.                                                                                      |
+| Missing `alt`             | Every image has `alt` in `data/*`; fill them in properly when you add real images.                                                                                               |
+| Console errors from fonts | Check the network is available at build time (fonts are downloaded during `next build`).                                                                                         |
 
 ## 13. Common errors and fixes
 
-| Error | Fix |
-| --- | --- |
-| `Module not found` / red import errors after pulling changes | Run `npm install` again. |
-| `Error: You are using Node.js 18...` | Upgrade to Node 20.9+ (`nvm install 22 && nvm use 22`). |
-| Contact form shows "temporarily unavailable" in production | `RESEND_API_KEY` is missing in Vercel. Add it and redeploy. |
-| Resend error: domain not verified / `from` not allowed | Use `onboarding@resend.dev` for tests, or verify your domain and use an address on it. |
-| Emails only arrive for one address | In Resend test mode you can only send to the account owner's email. Verify a domain for real use. |
-| Canonical/OG URLs show `localhost:3000` | Set `NEXT_PUBLIC_SITE_URL` and **redeploy**. |
-| New project 404s | Check the `slug` is unique, lowercase, with hyphens, and restart `npm run dev`. |
-| `Hydration failed` warning | Usually a browser extension modifying the page; try Incognito. Do not use `Math.random()` or `Date.now()` in server-rendered markup. |
-| Images don't change | Hard refresh; confirm the path starts with `/` and the file is under `public/`. |
-| Smooth scroll feels off in an embedded preview | Lenis is skipped for reduced-motion users; test in a normal browser window. |
-| Port 3000 busy | `npm run dev -- -p 3001`. |
-| TypeScript error after editing data | Run `npm run typecheck`; the `Project` interface in `types/index.ts` shows required fields. |
+| Error                                                        | Fix                                                                                                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `Module not found` / red import errors after pulling changes | Run `npm install` again.                                                                                                             |
+| `Error: You are using Node.js 18...`                         | Upgrade to Node 20.9+ (`nvm install 22 && nvm use 22`).                                                                              |
+| Contact form shows "temporarily unavailable" in production   | `RESEND_API_KEY` is missing in Vercel. Add it and redeploy.                                                                          |
+| Resend error: domain not verified / `from` not allowed       | Use `onboarding@resend.dev` for tests, or verify your domain and use an address on it.                                               |
+| Emails only arrive for one address                           | In Resend test mode you can only send to the account owner's email. Verify a domain for real use.                                    |
+| Canonical/OG URLs show `localhost:3000`                      | Set `NEXT_PUBLIC_SITE_URL` and **redeploy**.                                                                                         |
+| New project 404s                                             | Check the `slug` is unique, lowercase, with hyphens, and restart `npm run dev`.                                                      |
+| `Hydration failed` warning                                   | Usually a browser extension modifying the page; try Incognito. Do not use `Math.random()` or `Date.now()` in server-rendered markup. |
+| Images don't change                                          | Hard refresh; confirm the path starts with `/` and the file is under `public/`.                                                      |
+| Smooth scroll feels off in an embedded preview               | Lenis is skipped for reduced-motion users; test in a normal browser window.                                                          |
+| Port 3000 busy                                               | `npm run dev -- -p 3001`.                                                                                                            |
+| TypeScript error after editing data                          | Run `npm run typecheck`; the `Project` interface in `types/index.ts` shows required fields.                                          |
 
 ## Notes on animation and accessibility
 
@@ -172,4 +172,5 @@ Common fixes:
 - Only `transform`, `opacity` (and one `clip-path` reveal on project cards) are animated. The services list uses a CSS grid-row transition for its expand effect.
 - Page transitions are a fade/slide on route change. (Exit animations are not supported by the App Router.)
 - The optional sticky "stacked cards" effect for Selected Work was intentionally left out to keep the grid light on mobile.
+
 # graphic-designer-portfolio-website

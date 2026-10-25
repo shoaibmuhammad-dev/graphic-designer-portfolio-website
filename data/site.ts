@@ -24,20 +24,20 @@ export const siteConfig = {
   location: 'Karachi, Pakistan',
 
   // EDIT: contact email
-  email: 'hello@khanzadi.design',
+  email: 'hello@avawilliams.design',
 
   // EDIT: WhatsApp number, international format, digits only (no +, spaces or dashes)
   whatsapp: {
     number: '923001234567',
-    message: "Hi Khan, I found your portfolio and I'd like to talk about a project.",
+    message: "Hi Ava, I found your portfolio and I'd like to talk about a project.",
   },
 
   // EDIT: social profiles
   socials: [
-    { label: 'Behance', href: 'https://www.behance.net/khanzadi' },
-    { label: 'Instagram', href: 'https://www.instagram.com/khanzadi.design' },
-    { label: 'Dribbble', href: 'https://dribbble.com/khanzadi' },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/khanzadi' },
+    { label: 'Behance', href: 'https://www.behance.net/avawilliams' },
+    { label: 'Instagram', href: 'https://www.instagram.com/avawilliams.design' },
+    { label: 'Dribbble', href: 'https://dribbble.com/avawilliams' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/avawilliams' },
   ] satisfies SocialLink[],
 
   tagline: 'Designing identities that feel alive.',
@@ -71,7 +71,7 @@ export const siteConfig = {
     { value: 80, suffix: '+', label: 'Projects completed' },
     { value: 45, suffix: '+', label: 'Happy clients' },
   ],
-  cvPath: '/cv/khan-zadi-cv.pdf',
+  cvPath: '/cv/ava-williams-cv.pdf',
 
   // Replace by setting `src: '/images/portrait.jpg'` (4:5 ratio works best)
   portrait: {
