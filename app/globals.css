@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-background text-ink antialiased;
+    -webkit-tap-highlight-color: transparent;
+    text-size-adjust: 100%;
+  }
+  body {
+    @apply font-body;
+    overflow-x: clip;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-heading;
+  }
+  ::selection {
+    @apply bg-accent text-accent-onAccent;
+  }
+  *:focus-visible {
+    @apply outline outline-2 outline-offset-4 outline-accent;
+  }
+  img,
+  svg {
+    @apply block max-w-full;
+  }
+}
+
+/* Lenis smooth scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Custom cursor: hide the native one only while the custom cursor is active */
+html.has-cursor,
+html.has-cursor a,
+html.has-cursor button,
+html.has-cursor [data-cursor],
+html.has-cursor summary {
+  cursor: none;
+}
+html.has-cursor input,
+html.has-cursor textarea,
+html.has-cursor select {
+  cursor: text;
+}
+
+/* Preloader is skipped on repeat visits / reduced motion (set by inline script in layout) */
+html[data-seen='1'] .preloader {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-marquee,
+  .animate-ping,
+  .animate-float,
+  .animate-spinSlow,
+  .animate-scrollLine {
+    animation: none !important;
+  }
+}
