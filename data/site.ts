@@ -19,9 +19,9 @@ export const siteConfig = {
   ],
 
   // EDIT: city and country
-  city: 'Karachi',
-  country: 'Pakistan',
-  location: 'Karachi, Pakistan',
+  city: 'New York',
+  country: '',
+  location: 'New York',
 
   // EDIT: contact email
   email: 'hello@avawilliams.design',
@@ -44,7 +44,7 @@ export const siteConfig = {
   intro:
     'I make brand identities, packaging and digital visuals for founders and small teams who want their work to look considered from the first glance.',
   description:
-    'Ava Williams is a freelance graphic designer in Karachi specialising in branding and logo design, packaging, social media design and editorial work.',
+    'Ava Williams is a freelance graphic designer in New York specialising in branding and logo design, packaging, social media design and editorial work.',
 
   availability: { open: true, label: 'Open for freelance projects' },
 

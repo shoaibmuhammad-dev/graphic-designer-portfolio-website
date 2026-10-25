@@ -8,7 +8,7 @@ export const experience: Experience[] = [
     org: 'Independent',
     period: '2022 - Present',
     description:
-      'Brand identity, packaging and social design for startups, cafes and small publishers across Pakistan, the UAE and the UK.',
+      'Brand identity, packaging and social design for startups, cafes and small publishers across US, the UAE and the UK.',
   },
   {
     type: 'work',
