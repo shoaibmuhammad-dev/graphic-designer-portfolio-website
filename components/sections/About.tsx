@@ -12,7 +12,11 @@ export default function About() {
   return (
     <section id="about" aria-label="About" className="scroll-mt-16 bg-surface py-24 md:py-40">
       <Container>
-        <SectionHeading index="02" label="About" lines={['A designer who', 'starts with feeling']} />
+        <SectionHeading
+          index="02"
+          label="About"
+          lines={['A designer who', 'starts with feeling']}
+        />
 
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-20">
           <Reveal className="lg:col-span-5">
@@ -33,15 +37,26 @@ export default function About() {
               </p>
             </Reveal>
             <Reveal delay={0.1}>
-              <p className="mt-6 max-w-xl font-body text-lg leading-relaxed text-muted">{siteConfig.bio[1]}</p>
+              <p className="mt-6 max-w-xl font-body text-lg leading-relaxed text-muted">
+                {siteConfig.bio[1]}
+              </p>
             </Reveal>
 
             <ul className="mt-12 border-t border-line">
               {siteConfig.values.map((v, i) => (
-                <li key={v.title} className="grid gap-2 border-b border-line py-6 md:grid-cols-12 md:gap-6">
-                  <Label className="md:col-span-1 md:pt-1.5">{String(i + 1).padStart(2, '0')}</Label>
-                  <h3 className="font-heading text-xl font-medium tracking-tight md:col-span-4">{v.title}</h3>
-                  <p className="font-body text-base leading-relaxed text-muted md:col-span-7">{v.text}</p>
+                <li
+                  key={v.title}
+                  className="grid gap-2 border-b border-line py-6 md:grid-cols-12 md:gap-6"
+                >
+                  <Label className="md:col-span-1 md:pt-1.5">
+                    {String(i + 1).padStart(2, '0')}
+                  </Label>
+                  <h3 className="font-heading text-xl font-medium tracking-tight md:col-span-4">
+                    {v.title}
+                  </h3>
+                  <p className="font-body text-base leading-relaxed text-muted md:col-span-7">
+                    {v.text}
+                  </p>
                 </li>
               ))}
             </ul>
@@ -59,7 +74,9 @@ export default function About() {
                   <dd className="font-heading text-[clamp(2.25rem,5.5vw,4.5rem)] font-medium leading-none tracking-tighter">
                     <CountUp value={f.value} suffix={f.suffix} />
                   </dd>
-                  <dt className="mt-3 font-mono text-xs uppercase tracking-widest text-muted">{f.label}</dt>
+                  <dt className="mt-3 font-mono text-xs uppercase tracking-widest text-muted">
+                    {f.label}
+                  </dt>
                 </div>
               ))}
             </dl>

@@ -64,7 +64,7 @@ function Shapes({ art }: { art: ArtSpec }) {
           x="200"
           y="300"
           textAnchor="middle"
-          fontSize={art.text && art.text.length > 1 ? 210 : 330}
+          fontSize={art.text && art.text.length > 1 ? 150 : 150}
           fontWeight="700"
           fontFamily="var(--font-heading), sans-serif"
           fill={s}
@@ -110,7 +110,12 @@ export function Artwork({ image, className, sizes = '100vw', priority }: Props) 
       className={cn('absolute inset-0', className)}
       style={{ backgroundImage: `linear-gradient(135deg, ${art.from}, ${art.to})` }}
     >
-      <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" className="h-full w-full" aria-hidden>
+      <svg
+        viewBox="0 0 400 400"
+        preserveAspectRatio="xMidYMid slice"
+        className="h-full w-full"
+        aria-hidden
+      >
         <Shapes art={art} />
       </svg>
     </div>

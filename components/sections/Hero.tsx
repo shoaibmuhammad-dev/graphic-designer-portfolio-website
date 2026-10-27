@@ -94,7 +94,7 @@ export default function Hero() {
     <section
       ref={ref}
       id="top"
-      className="relative flex min-h-[100svh] flex-col justify-between overflow-hidden pb-8 pt-28 md:pb-10 md:pt-36"
+      className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden pb-8 pt-28 md:pb-10 md:pt-36"
     >
       {/* Grid lines */}
       <div
