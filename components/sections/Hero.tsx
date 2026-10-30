@@ -156,7 +156,7 @@ export default function Hero() {
           intro
           delay={0.1}
           lines={[siteConfig.name, siteConfig.role]}
-          className="mt-8 font-heading text-[clamp(3.5rem,12.5vw,12.5rem)] font-medium leading-[0.9] tracking-tighter md:mt-12"
+          className="mt-8 pb-2 font-heading text-[clamp(3.5rem,12.5vw,12.5rem)] font-medium leading-[0.9] tracking-tighter"
           lineClasses={['', 'text-muted']}
         />
       </Container>

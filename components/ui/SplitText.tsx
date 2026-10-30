@@ -64,7 +64,7 @@ export function SplitText({
             className={cn('block', lineClassName, lineClasses?.[i])}
           >
             {words.map((w, j) => (
-              <span key={j} className="inline-block overflow-hidden pb-[0em] align-bottom">
+              <span key={j} className="inline-block overflow-hidden pb-5 pr-1 align-bottom">
                 <motion.span variants={wordVariants} className="inline-block">
                   {w}
                   {j < words.length - 1 ? '\u00A0' : ''}

@@ -7,6 +7,7 @@ import { Label } from '@/components/ui/Label'
 import { Reveal } from '@/components/ui/Reveal'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { siteConfig } from '@/data/site'
+import Image from 'next/image'
 
 export default function About() {
   return (
@@ -21,8 +22,16 @@ export default function About() {
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-20">
           <Reveal className="lg:col-span-5">
             <div className="lg:sticky lg:top-28">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-brand">
-                <Artwork image={siteConfig.portrait} sizes="(min-width: 1024px) 40vw, 100vw" />
+              <div className="group relative aspect-[4/5] overflow-hidden rounded-brand">
+                {/* <Artwork image={siteConfig.portrait} sizes="(min-width: 1024px) 40vw, 100vw" /> */}
+                <Image
+                  src={'/images/profile-picture.jpg'}
+                  alt="profile-picture"
+                  width={800}
+                  height={800}
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  className="transition-all duration-700 group-hover:scale-[1.05]"
+                />
               </div>
               <Label className="mt-3 block">
                 {siteConfig.name}, {siteConfig.city}

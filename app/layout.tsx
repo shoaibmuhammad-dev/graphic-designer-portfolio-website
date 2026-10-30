@@ -93,7 +93,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
           </main>
           <Footer />
-          <WhatsAppButton />
+          {/* <WhatsAppButton /> */}
         </ClientShell>
 
         {plausible && (
